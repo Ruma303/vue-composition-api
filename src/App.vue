@@ -3,8 +3,6 @@ import Options from './components/Options.vue';
 import Compositions from './components/Compositions.vue';
 import Setup from './components/Setup.vue';
 import Reactive from './components/Reactive.vue';
-import WithComposables from './components/WithComposables.vue';
-
 </script>
 
 <template>
@@ -12,7 +10,6 @@ import WithComposables from './components/WithComposables.vue';
     <Compositions></Compositions>
     <Setup></Setup>
     <Reactive></Reactive>
-    <WithComposables />
 </template>
 
 <style scoped>
