@@ -16,12 +16,19 @@
             <li v-for="({ id, label }, index) in items" :key="id">
                 {{ index }} - {{ label }}</li>
         </ul>
+
+        <div>
+            <p>{{ state.count }}</p>
+            <button @click="state.count++">Increment</button>
+            <button @click="decrement">Decrement</button>
+        </div>
     </section>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, reactive } from 'vue';
 
+// ref()
 let message = ref('Variabile reattiva');
 const items = ref([
     { id: 1, label: "coffee" },
@@ -29,22 +36,33 @@ const items = ref([
     { id: 3, label: "black hat" }
 ]);
 
-    const newItem = ref('');
-    const addItem = () => {
-        if (newItem.value.length <= 20) {
-            items.value.push(
-                { id: items.value.length + 1, label: newItem.value });
-            newItem.value = '';
-        }
+const newItem = ref('');
+const addItem = () => {
+    if (newItem.value.length <= 20) {
+        items.value.push(
+            { id: items.value.length + 1, label: newItem.value });
+        newItem.value = '';
     }
+}
 
-    // Computed properties
-    const itemsCount = computed(() => {
-        return items.value.length;
-    });
-    const charactersCount = computed(() => {
-        return newItem.value.length;
-    });
+// Computed properties
+const itemsCount = computed(() => {
+    return items.value.length;
+});
+const charactersCount = computed(() => {
+    return newItem.value.length;
+});
+
+// reactive()
+let state = reactive({count: 0});
+const decrement = () => state.count--;
+
+/* Non funzioneranno: */
+// const primitiveDate = reactive({10});
+/* const decrement = () => {
+    state = state.count--
+}; */
+
 
 /* (function() {
     message = 'Nuovo valore'; // Cambia
@@ -60,8 +78,6 @@ message = 'Valore cambiato', 3000); */
 setTimeout(() => {
     message.value = 'Valore cambiato dopo 3 secondi';
 }, 3000); */
-
-
 
 </script>
 
