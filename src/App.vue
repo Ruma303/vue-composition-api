@@ -6,9 +6,10 @@ import Reactive from './components/Reactive.vue';
 </script>
 
 <template>
-    <Options></Options>
-    <Compositions></Compositions>
-    <Setup></Setup>
+    <h1>Composition Api</h1>
+    <!-- <Options></Options> -->
+    <!-- <Compositions></Compositions> -->
+    <!-- <Setup></Setup> -->
     <Reactive></Reactive>
 </template>
 
