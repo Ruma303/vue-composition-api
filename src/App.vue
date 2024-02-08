@@ -1,16 +1,22 @@
 <script setup>
-import Options from './components/Options.vue';
-import Compositions from './components/Compositions.vue';
-import Setup from './components/Setup.vue';
-import Reactive from './components/Reactive.vue';
+import OldSetup from './components/OldSetup.vue';
+import NewSetup from './components/NewSetup.vue';
 </script>
 
 <template>
-    <h1>Composition Api</h1>
-    <!-- <Options></Options> -->
-    <!-- <Compositions></Compositions> -->
-    <!-- <Setup></Setup> -->
-    <Reactive></Reactive>
+    <div class="container max-w-96 flex flex-col mx-auto my-2 gap-8">
+        <h1 class="text-6xl">Setup Composition Api</h1>
+
+        <section>
+            <h2 class="text-4xl">setup()</h2>
+            <old-setup />
+        </section>
+
+        <section>
+            <h2 class="text-4xl">&lt;script setup&gt;</h2>
+            <new-setup />
+        </section>
+    </div>
 </template>
 
 <style scoped>
