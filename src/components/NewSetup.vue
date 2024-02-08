@@ -1,18 +1,30 @@
-    <script setup>
-    import { ref } from 'vue';
-    const name = ref('Ruma');
-    const age = ref(28);
-    let randomNumber = ref(10);
-            const createRandomNumber = () => {
-                randomNumber.value = Math.floor(Math.random() * 101);
-            }
-    </script>
+<script setup>
+import { ref } from 'vue';
+import ChildComp from './ChildComp.vue';
 
-    <template>
-        <p class="text-2xl">Ciao, sono {{ name }} e ho {{ age }} anni</p>
-        <button @click="createRandomNumber" class="bg-stone-300 p-1 rounded hover:cursor hover:scale-105">Random number</button>
-        <p>{{ randomNumber }}</p>
-    </template>
+const name = ref('Ruma');
+const age = ref(28);
+const randomNumber = ref(10);
+const payload = ref(null);
 
-<style scoped>
-</style>
+const createRandomNumber = () => {
+    randomNumber.value = Math.floor(Math.random() * 101);
+}
+
+const showPayload = (newPayload) => {
+    payload.value = newPayload
+}
+
+const handleSecondEmit = () => {
+    console.log('handleSecondEmit ricevuto')
+}
+
+</script>
+
+<template>
+    <p class="text-2xl">Ciao, sono {{ name }} e ho {{ age }} anni</p>
+    <button @click="createRandomNumber" class="bg-stone-300 p-1 rounded hover:cursor hover:scale-105">Generate random number</button>
+    <p>{{ randomNumber }}</p>
+    <child-comp text="Valore Prop passata dal genitore" @emitPayload="showPayload" @secondEventEmitted="handleSecondEmit" />
+    <p>{{ payload }}</p>
+</template>
