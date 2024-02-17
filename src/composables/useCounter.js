@@ -1,11 +1,26 @@
-import { ref } from 'vue';
+import { reactive, computed, watch } from 'vue';
 
 export function useCounter() {
-  const count = ref(0);
+    const counterData = reactive({
+        count: 0,
+        title: 'My Counter'
+    });
 
-  function increment() {
-    count.value++;
-  }
+    const counterDoubled = computed(()=> {
+        return counterData.count * 2;
+    });
 
-  return { count, increment };
+    watch(()=> counterData.count, (newValue, oldValue) => {
+        console.log('Old count value: ', oldValue, 'new value: ', newValue);
+    })
+
+    function increaseCounter() {
+        counterData.count++;
+    }
+
+    function decreaseCounter() {
+        counterData.count++;
+    }
+
+    return { counterData, counterDoubled, increaseCounter, decreaseCounter };
 }
