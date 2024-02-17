@@ -19,7 +19,7 @@ export function useCounter() {
     }
 
     function decreaseCounter() {
-        counterData.count++;
+        counterData.count--;
     }
 
     return { counterData, counterDoubled, increaseCounter, decreaseCounter };

@@ -7,8 +7,8 @@ import { RouterLink, RouterView } from "vue-router";
         <h1 class="text-4xl mb-4">Composables</h1>
 
         <nav class="flex gap-2 items-center">
-            <router-link to="/">Home</router-link>
-            <router-link to="/about" class="">About</router-link>
+            <router-link to="/">Cakes</router-link>
+            <router-link to="/lollipops" class="">Lollipops</router-link>
         </nav>
         <router-view />
     </main>

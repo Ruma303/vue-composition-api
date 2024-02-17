@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Cakes from '@/components/Cakes.vue';
-import Lollipops from '@/components/Lollipops.vue';
+import CakesVue from '@/components/Cakes.vue';
+import LoollipopsVue from '@/components/Loollipops.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',
-            component: Cakes
+            component: CakesVue
         },
         {
             path: '/lollipops',
-            component: Lollipops
+            component: LoollipopsVue
         },
     ]
 });

@@ -8,7 +8,8 @@ const componentTitle = ref('Lollipops counter');
 <template>
     <h2 class="text-2xl">{{ componentTitle }}</h2>
     <section class="flex items-center gap-2">
-        <button @click="decreaseCounter" class="bg-sky-400 py-1 px-2 rounded-lg">-</button>
+        <button @click="decreaseCounter" class="bg-sky-400 py-1 px-2 rounded-lg disabled:bg-gray-300"
+            :disabled="counterData.count <= 0">-</button>
         <button @click="increaseCounter" class="bg-sky-400 py-1 px-2 rounded-lg">+</button>
     </section>
     <section class="flex flex-col items-center gap-2">
