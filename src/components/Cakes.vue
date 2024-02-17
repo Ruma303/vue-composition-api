@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useCounter } from '@/composables/useCounter';
 const { counterData, counterDoubled, increaseCounter, decreaseCounter } = useCounter();
-const componentTitle = ref(counterData.title);
+const componentTitle = ref('Cakes counter');
 </script>
 
 <template>
