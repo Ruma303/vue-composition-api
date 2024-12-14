@@ -1,18 +1,16 @@
-<script setup>
-import Options from './components/Options.vue';
-import Compositions from './components/Compositions.vue';
-import Setup from './components/Setup.vue';
-import Reactive from './components/Reactive.vue';
-</script>
-
 <template>
-    <h1>Composition Api</h1>
-    <!-- <Options></Options> -->
-    <!-- <Compositions></Compositions> -->
-    <!-- <Setup></Setup> -->
-    <Reactive></Reactive>
+    <h1>Composition API</h1>
+    <Navbar />
+    <router-view />
 </template>
 
-<style scoped>
+<script setup>
+import Navbar from '@/components/Navbar/Navbar.vue';
+</script>
 
+<style scoped>
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
 </style>
